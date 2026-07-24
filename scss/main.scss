@@ -1,0 +1,104 @@
+//Importar parciales
+@use './variables' as v;
+@use './mixins' as m;
+@use './animations';
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: v.$fuente-base;
+    background: v.$color-claro;
+    color: v.$color-oscuro;
+    line-height: 1.6;
+}
+
+// ----Header---
+.site-header {
+    background: v.$color-oscuro;
+
+
+// Anidamiento: .nav dentro del header
+.nav {
+    @include m.contenedor;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.logo { color: #fff; font-weight: 700; text-decoration: none; }
+
+.nav {
+    
+
+    &__links {
+        display: flex;
+        flex-direction: row;         
+        justify-content: flex-start;   
+        gap: 22px;
+        list-style: none;
+        padding: 0;                  
+        margin: 0;                   
+
+        a { 
+            color: #fff;             
+            text-decoration: none;   
+        }
+    }
+}
+
+.nav__toggle {
+    display: none;
+    background: none; border: none;
+    color: #fff; font-size: 1.4rem; cursor: pointer;
+
+    }
+}
+
+// ---- Hero ----
+.hero {
+    @include m.contenedor;
+    text-align: center;
+    padding: 80px 20px;
+
+    h1 { font-size: 2.4rem; margin-bottom: 14px; }
+    p { color: #5a6472; margin-bottom: 24px; }
+}
+
+.btn { @include m.boton(v.$color-primario); }
+
+//---Recursos con grid----
+.recursos {
+    @include m.contenedor;
+    padding: 40px 20px;
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .card {
+        background: #fff;
+        border-radius: v.$radio;
+        padding: 24px;
+    }
+}
+
+// ---Footer---
+.site-footer {
+    background: v.$color-oscuro;
+    color: #c3cdd8;
+    text-align: center;
+    padding: 24px;
+}
+
+// -----Responsive con el mixin de media query----
+@include m.movil {
+    .site-header__links { display: none; }
+    .site-header .nav__toggle { display: block; }
+    .recursos .cards { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 1.8rem; }
+}

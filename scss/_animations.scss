@@ -1,0 +1,122 @@
+@keyframes aparecer {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+h1 {
+  animation: aparecer 1.5s ease-in forwards;
+}
+
+@keyframes subir {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+h2 {
+  animation: subir 1.2s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
+@keyframes pulso {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+.btn {
+  animation: pulso 1.8s ease-in-out infinite;
+}
+
+.btn {
+  background-color: #63580a8e;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.btn:hover {
+  background-color: #63580a8e;
+  transform: translateY(-3px);
+}
+
+.card {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.18);
+}
+
+@keyframes entrar {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.card { opacity: 0; animation: entrar 0.8s ease-out forwards; }
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.4s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+
+.cards { perspective: 1000px; }
+.card {
+  transition: transform 2s ease;
+  transform-style: preserve-3d;
+}
+.card:hover {
+  transform: rotateY(12deg);
+}
+
+.nav__links {
+  position: relative;
+  text-decoration: none;
+  color: #111;
+}
+.nav__links::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -4px;
+  width: 0; height: 2px;
+  background: #463d0c;
+  transition: width 0.3s ease;
+}
+.nav__links:hover::after {
+  width: 100%;
+}
+
+@keyframes rebote {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(12px); }
+}
+.scroll {
+  animation: rebote 1.4s ease-in-out infinite;
+}
+
+.recursos {
+    .oculto {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+    .visible {
+    opacity: 1;
+    transform: translateY(0);
+    }
+}
+
+@keyframes gradienteMovil {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.hero {
+   
+    background: linear-gradient(-45deg, #947e70, #866147, #9c7c64, #d7c0ae);
+    background-size: 400% 400%;
+    animation: gradienteMovil 15s ease infinite; 
+
+}
+
+
