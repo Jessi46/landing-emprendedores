@@ -1,0 +1,31 @@
+{
+  "name": "emprende-landing",
+  "version": "1.0.0",
+  "description": "(Pega aquí el documento de requerimientos de la Fase 1)\r # Documentación del Proyecto - Landing Page",
+  "main": "index.js",
+  
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jessi46/landing-emprendedores.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Jessi46/landing-emprendedores/issues"
+  },
+  "homepage": "https://github.com/Jessi46/landing-emprendedores#readme",
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "vite": "^8.1.5"
+  },
+  "scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview",
+  "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
+
+

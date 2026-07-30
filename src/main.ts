@@ -1,5 +1,5 @@
-const boton = document.getElementById('menuBtn');
-const links = document.querySelector('.nav__links');
+const boton = document.getElementById('menuBtn')!;
+const links = document.querySelector('.nav__links')!;
 
 boton.addEventListener('click', () => {
     // Muestra u oculta el menu en pantallas pequeñas 
