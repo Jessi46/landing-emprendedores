@@ -19,3 +19,10 @@ const observador = new IntersectionObserver((entradas) => {
 document.querySelectorAll(".oculto").forEach((el) => {
   observador.observe(el);
 });
+
+import { GestorContactos } from "./formulario";
+
+const gestor = new GestorContactos("#formulario", "#error", "#lista-contactos");
+
+const btnGuardar = document.querySelector("#guardar") as HTMLButtonElement;
+btnGuardar?.addEventListener("click", () => gestor.guardarJSON());

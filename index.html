@@ -38,9 +38,28 @@
                 <article class="card"><h3>Marketing</h3><p>Consigue clientes.</p></article>
             </div>
         </section>
+
+        <!-- SECCIÓN DE CONTACTO / FORMULARIO -->
+        <section class="contacto" id="contacto">
+            <h2>Regístrate / Contacto</h2>
+            <form id="formulario">
+                <input name="nombre" placeholder="Nombre" required>
+                <input name="correo" type="email" placeholder="Correo" required>
+                <select name="plan">
+                    <option value="gratis">Gratis</option>
+                    <option value="emprendedor">Emprendedor</option>
+                    <option value="empresa">Empresa</option>
+                </select>
+                <button type="submit">Registrarme</button>
+            </form>
+            
+            <p id="error" style="color:red"></p>
+            <ul id="lista-contactos"></ul>
+            <button id="guardar">Descargar contactos (JSON)</button>
+        </section>
     </main>
 
-    <footer class="site-footer" id="contacto"> 
+    <footer class="site-footer"> 
         <p>© 2026 Emprende, todos los derechos reservados.</p>
     </footer>
 
