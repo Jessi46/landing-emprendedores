@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emprende * Recursos para emprendedores</title>
+    <!-- CSS generado SASS-->
+  <script type="module" crossorigin src="/landing-emprendedores/assets/index-Dxvyjde-.js"></script>
+  <link rel="stylesheet" crossorigin href="/landing-emprendedores/assets/index-CehECBon.css">
+</head>
+<body>
+    
+    <header class="site-header">
+        <nav class="nav">
+            <a href="#" class="logo">Emprende</a>
+            <ul class="nav__links">
+                <li><a href="#recursos">Recursos</a></li>
+                <li><a href="#comunidad">Comunidad</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <button class="nav__toggle" id="menuBtn">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Impulsa y haz crecer tu emprendimiento</h1>
+            <p>Guias, plantillas y recursos practicos para emprendedores.</p>
+            <a href="#recursos" class="btn">Explorar recursos</a>
+
+            <div class="scroll">↓</div>
+        </section>
+
+        <section class="recursos" id="recursos">
+            <h2>Recursos</h2>
+            <div class="cards">
+                <article class="card"><h3>Plan de negocio</h3><p>Estructura tu idea.</p></article>
+                <article class="card"><h3>Finanzas</h3><p>Controla tu dinero.</p></article>
+                <article class="card"><h3>Marketing</h3><p>Consigue clientes.</p></article>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE CONTACTO / FORMULARIO -->
+        <section class="contacto" id="contacto">
+            <h2>Regístrate / Contacto</h2>
+            <form id="formulario">
+                <input name="nombre" placeholder="Nombre" required>
+                <input name="correo" type="email" placeholder="Correo" required>
+                <select name="plan">
+                    <option value="gratis">Gratis</option>
+                    <option value="emprendedor">Emprendedor</option>
+                    <option value="empresa">Empresa</option>
+                </select>
+                <button type="submit">Registrarme</button>
+            </form>
+            
+            <p id="error" style="color:red"></p>
+            <ul id="lista-contactos"></ul>
+            <button id="guardar">Descargar contactos (JSON)</button>
+        </section>
+    </main>
+
+    <footer class="site-footer"> 
+        <p>© 2026 Emprende, todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
