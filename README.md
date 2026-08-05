@@ -51,5 +51,17 @@ como actividad de las sesiones 13–16.
 2. npm run dev
 3. Abrir la URL local que muestra la terminal
 
+## Tecnologías y justificación
+
+| Tecnología | Por qué la usamos |
+| --- | --- |
+| HTML5 semántico | Estructura clara y accesible del contenido |
+| SASS | Estilos mantenibles con variables y anidamiento |
+| Media Queries | Adaptar el sitio a móvil, tableta y escritorio |
+| Animaciones CSS | Mejorar la experiencia sin librerías pesadas |
+| Git y GitHub | Control de versiones y respaldo en la nube |
+| TypeScript + POO | Lógica tipada, segura y organizada en clases |
+
 ## Autor
 Jessica Cardona — Desarrollo de Frontend, INTECAP
+

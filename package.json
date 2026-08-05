@@ -17,8 +17,9 @@
   "homepage": "https://github.com/Jessi46/landing-emprendedores#readme",
   "devDependencies": {
     "gh-pages": "^6.3.0",
+    "sass": "^1.102.0",
     "typescript": "^7.0.2",
-    "vite": "^8.1.5"
+    "vite": "^8.2.0"
   },
   "scripts": {
     "dev": "vite",
