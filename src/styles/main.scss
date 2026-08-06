@@ -84,3 +84,40 @@ body {
     padding: 6rem 2rem;
   }
 }
+
+// TRANSICIÓN: suaviza un cambio de estado en tus tarjetas
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    // TRANSFORMACIÓN: mueve, escala o rota un elemento
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+// ANIMACIÓN: una secuencia con @keyframes que corre sola
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h1 {
+  animation: aparecer 0.8s ease-out;
+}
+
+// El botón llama la atención con un latido sutil
+@keyframes latido {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.btn {
+  animation: latido 2s ease-in-out infinite;
+}
