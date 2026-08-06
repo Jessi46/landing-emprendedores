@@ -39,3 +39,24 @@ body {
   gap: $espaciado;
   padding: ($espaciado * 2) $espaciado;
 }
+
+// Móvil primero: los estilos de arriba son la base (pantalla pequeña).
+// Luego adaptamos a pantallas más grandes.
+
+// Tableta: 768px o más
+@media (min-width: 768px) {
+  .beneficios {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// Escritorio: 1024px o más
+@media (min-width: 1024px) {
+  .beneficios {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .hero {
+    padding: 6rem 2rem;
+  }
+}
+
