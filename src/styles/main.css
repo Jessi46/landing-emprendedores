@@ -1,0 +1,30 @@
+body {
+  font-family: system-ui, sans-serif;
+  color: #2B3A45;
+  margin: 0;
+}
+
+.cta {
+  background: #065A82;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+.cta:hover {
+  background: rgb(1.4705882353%, 22.0588235294%, 31.862745098%);
+}
+
+.hero {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.beneficios {
+  display: grid;
+  gap: 1rem;
+  padding: 2rem 1rem;
+}
+
+/*# sourceMappingURL=main.css.map */

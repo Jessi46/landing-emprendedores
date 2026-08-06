@@ -1,0 +1,41 @@
+// src/styles/main.scss
+
+// Variables: define una sola vez, usa en todo el sitio
+$color-primario: #065A82;
+$color-acento: #F2A65A;
+$color-texto: #2B3A45;
+$espaciado: 1rem;
+$radio: 8px;
+
+// Estilos base
+body {
+  font-family: system-ui, sans-serif;
+  color: $color-texto;
+  margin: 0;
+}
+
+// Anidamiento: el botón y su estado hover juntos
+.cta {
+  background: $color-primario;
+  color: white;
+  padding: $espaciado ($espaciado * 2);
+  border-radius: $radio;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background: darken($color-primario, 10%);
+  }
+}
+
+// Estilos por sección
+.hero {
+  padding: ($espaciado * 4) $espaciado;
+  text-align: center;
+}
+
+.beneficios {
+  display: grid;
+  gap: $espaciado;
+  padding: ($espaciado * 2) $espaciado;
+}
