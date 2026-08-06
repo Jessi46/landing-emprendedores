@@ -4,15 +4,32 @@ body {
   margin: 0;
 }
 
-.cta {
+.site-header .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.site-header .nav__links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+.site-header .nav__links a {
+  text-decoration: none;
+  color: #2B3A45;
+}
+
+.btn {
+  display: inline-block;
   background: #065A82;
   color: white;
   padding: 1rem 2rem;
   border-radius: 8px;
   border: none;
+  text-decoration: none;
   cursor: pointer;
 }
-.cta:hover {
+.btn:hover {
   background: rgb(1.4705882353%, 22.0588235294%, 31.862745098%);
 }
 
@@ -21,19 +38,21 @@ body {
   text-align: center;
 }
 
-.beneficios {
+.recursos {
+  padding: 2rem 1rem;
+}
+.recursos .cards {
   display: grid;
   gap: 1rem;
-  padding: 2rem 1rem;
 }
 
 @media (min-width: 768px) {
-  .beneficios {
+  .recursos .cards {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (min-width: 1024px) {
-  .beneficios {
+  .recursos .cards {
     grid-template-columns: repeat(3, 1fr);
   }
   .hero {

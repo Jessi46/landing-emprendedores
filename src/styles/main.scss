@@ -1,6 +1,6 @@
 // src/styles/main.scss
-
-// Variables: define una sola vez, usa en todo el sitio
+@use "sass:color";
+// Variables
 $color-primario: #065A82;
 $color-acento: #F2A65A;
 $color-texto: #2B3A45;
@@ -14,17 +14,39 @@ body {
   margin: 0;
 }
 
-// Anidamiento: el botón y su estado hover juntos
-.cta {
+// Navegación (con anidamiento para tus clases exactas)
+.site-header {
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__links {
+      display: flex;
+      gap: $espaciado;
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        color: $color-texto;
+      }
+    }
+  }
+}
+
+// Anidamiento: el botón (.btn) y su estado hover juntos
+.btn {
+  display: inline-block;
   background: $color-primario;
   color: white;
   padding: $espaciado ($espaciado * 2);
   border-radius: $radio;
   border: none;
+  text-decoration: none;
   cursor: pointer;
 
   &:hover {
-    background: darken($color-primario, 10%);
+  background: color.adjust($color-primario, $lightness: -10%);
   }
 }
 
@@ -34,29 +56,31 @@ body {
   text-align: center;
 }
 
-.beneficios {
-  display: grid;
-  gap: $espaciado;
+// Tu sección de recursos y tarjetas
+.recursos {
   padding: ($espaciado * 2) $espaciado;
+
+  .cards {
+    display: grid;
+    gap: $espaciado;
+  }
 }
 
-// Móvil primero: los estilos de arriba son la base (pantalla pequeña).
-// Luego adaptamos a pantallas más grandes.
+// Media Queries (Móvil primero)
 
 // Tableta: 768px o más
 @media (min-width: 768px) {
-  .beneficios {
+  .recursos .cards {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 // Escritorio: 1024px o más
 @media (min-width: 1024px) {
-  .beneficios {
+  .recursos .cards {
     grid-template-columns: repeat(3, 1fr);
   }
   .hero {
     padding: 6rem 2rem;
   }
 }
-
