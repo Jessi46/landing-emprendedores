@@ -19,6 +19,12 @@ body {
   width: 100%;
 }
 
+.container {
+  width: 100%;
+  max-width: 1200px; 
+  margin: 0 auto;
+}
+
 h1, h2, h3 {
   color: $color-primario;
 }
@@ -252,5 +258,5 @@ p {
 .hero {
   background: linear-gradient(-45deg, $color-primario, $color-acento, #553d2a, #5f4633);
   background-size: 400% 400%;
-  animation: fondoMovimiento 12s ease infinite;
+ // animation: fondoMovimiento 12s ease infinite;
 }
