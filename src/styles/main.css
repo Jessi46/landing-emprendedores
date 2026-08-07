@@ -4,6 +4,13 @@ body {
   background-color: #ab9680;
   margin: 0;
   padding: 0;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 h1, h2, h3 {
@@ -212,7 +219,6 @@ h1, h2, h3 {
 .hero {
   background: linear-gradient(-45deg, #907761, rgba(156, 101, 45, 0.8), #553d2a, #5f4633);
   background-size: 400% 400%;
-  animation: fondoMovimiento 12s ease infinite;
 }
 
 /*# sourceMappingURL=main.css.map */
