@@ -1,87 +1,197 @@
 // src/styles/main.scss
 @use "sass:color";
-// Variables
-$color-primario: #065A82;
-$color-acento: #F2A65A;
-$color-texto: #2B3A45;
+// 1. Variables
+$color-primario: #907761;
+$color-acento: #9c652dcc;
+$color-texto: #442f13;
+$color-fondo: #ab9680;
+$color-blanco: #FFFFFF;
 $espaciado: 1rem;
 $radio: 8px;
 
-// Estilos base
+// 2. Estilos Base
 body {
   font-family: system-ui, sans-serif;
   color: $color-texto;
+  background-color: $color-fondo;
   margin: 0;
+  padding: 0;
 }
 
-// Navegación (con anidamiento para tus clases exactas)
+h1, h2, h3 {
+  color: $color-primario;
+}
+
+// 3. Header & Navegación
 .site-header {
+  background: $color-blanco;
+  padding: $espaciado ($espaciado * 2);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+
   .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: $color-primario;
+      text-decoration: none;
+    }
 
     &__links {
-      display: flex;
-      gap: $espaciado;
       list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: $espaciado * 1.5;
 
       a {
         text-decoration: none;
         color: $color-texto;
+        font-weight: 500;
+        transition: color 0.3s;
+
+        &:hover {
+          color: $color-acento;
+        }
       }
+    }
+
+    &__toggle {
+      display: none; // Se oculta en pantallas grandes
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
     }
   }
 }
 
-// Anidamiento: el botón (.btn) y su estado hover juntos
-.btn {
-  display: inline-block;
-  background: $color-primario;
-  color: white;
-  padding: $espaciado ($espaciado * 2);
-  border-radius: $radio;
-  border: none;
-  text-decoration: none;
-  cursor: pointer;
-
-  &:hover {
-  background: color.adjust($color-primario, $lightness: -10%);
-  }
-}
-
-// Estilos por sección
+// 4. Hero Section
 .hero {
   padding: ($espaciado * 4) $espaciado;
   text-align: center;
+  background: $color-blanco;
+  border-bottom: 1px solid color.adjust($color-texto, $lightness: 60%);
+
+  h1 {
+    font-size: 2.2rem;
+    margin-bottom: $espaciado;
+  }
+
+p {
+  color: color.adjust($color-texto, $lightness: 20%);
+  margin-bottom: $espaciado * 2;
 }
 
-// Tu sección de recursos y tarjetas
-.recursos {
-  padding: ($espaciado * 2) $espaciado;
-
-  .cards {
-    display: grid;
-    gap: $espaciado;
+  .scroll {
+    margin-top: $espaciado * 2;
+    font-size: 1.5rem;
+    color: $color-acento;
   }
 }
 
-// Media Queries (Móvil primero)
+// 5. Botones (.btn)
+.btn, button[type="submit"], #guardar {
+  display: inline-block;
+  background-color: $color-primario;
+  color: $color-blanco;
+  padding: $espaciado ($espaciado * 1.5);
+  border-radius: $radio;
+  border: none;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
 
-// Tableta: 768px o más
+ &:hover {
+    background-color: color.adjust($color-primario, $lightness: -10%);
+  }
+}
+
+// 6. Sección Recursos y Tarjetas
+.recursos {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: ($espaciado * 3) $espaciado;
+  text-align: center;
+
+  .cards {
+    display: grid;
+    gap: $espaciado * 1.5;
+    margin-top: $espaciado * 2;
+
+    .card {
+      background: $color-blanco;
+      padding: $espaciado * 1.5;
+      border-radius: $radio;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+  }
+}
+
+// 7. Sección Contacto y Formulario
+.contacto {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: ($espaciado * 3) $espaciado;
+  text-align: center;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: $espaciado;
+    background: $color-blanco;
+    padding: $espaciado * 2;
+    border-radius: $radio;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+
+    input, select {
+      padding: $espaciado * 0.8;
+      border: 1px solid #ccc;
+      border-radius: $radio * 0.5;
+      font-size: 1rem;
+    }
+  }
+
+  #guardar {
+    margin-top: $espaciado;
+    background-color: $color-acento;
+
+    &:hover {
+     background-color: color.adjust($color-acento, $lightness: -10%);
+    }
+  }
+}
+
+// 8. Footer
+.site-footer {
+  text-align: center;
+  padding: $espaciado * 2;
+  background: $color-texto;
+  color: $color-blanco;
+  margin-top: $espaciado * 3;
+}
+
+// 9. Media Queries (Responsivo)
+
+// Tableta (768px+)
 @media (min-width: 768px) {
   .recursos .cards {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-// Escritorio: 1024px o más
+// Escritorio (1024px+)
 @media (min-width: 1024px) {
   .recursos .cards {
     grid-template-columns: repeat(3, 1fr);
-  }
-  .hero {
-    padding: 6rem 2rem;
   }
 }
 
@@ -120,4 +230,26 @@ body {
 
 .btn {
   animation: latido 2s ease-in-out infinite;
+}
+
+.card {
+  border: 1px solid transparent;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+
+  &:hover {
+    border-color: $color-acento;
+    box-shadow: 0 0 15px color.adjust($color-acento, $alpha: -0.5);
+  }
+}
+
+@keyframes fondoMovimiento {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero {
+  background: linear-gradient(-45deg, $color-primario, $color-acento, #553d2a, #5f4633);
+  background-size: 400% 400%;
+  animation: fondoMovimiento 12s ease infinite;
 }
