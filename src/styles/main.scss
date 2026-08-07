@@ -80,26 +80,22 @@ h1, h2, h3 {
 
 // 4. Hero Section
 .hero {
-  padding: ($espaciado * 4) $espaciado;
-  text-align: center;
-  background: $color-blanco;
-  border-bottom: 1px solid color.adjust($color-texto, $lightness: 60%);
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-  h1 {
-    font-size: 2.2rem;
-    margin-bottom: $espaciado;
-  }
+  background: linear-gradient(
+    -45deg,
+    $color-primario,
+    $color-acento,
+    #553d2a,
+    #5f4633
+  );
 
-p {
-  color: color.adjust($color-texto, $lightness: 20%);
-  margin-bottom: $espaciado * 2;
-}
-
-  .scroll {
-    margin-top: $espaciado * 2;
-    font-size: 1.5rem;
-    color: $color-acento;
-  }
+  background-size: 400% 400%;
+  color: white;
 }
 
 // 5. Botones (.btn)
@@ -145,34 +141,60 @@ p {
 
 // 7. Sección Contacto y Formulario
 .contacto {
-  max-width: 600px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: ($espaciado * 3) $espaciado;
-  text-align: center;
+  padding: ($espaciado * 4) $espaciado;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
 
   form {
-    display: flex;
-    flex-direction: column;
-    gap: $espaciado;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
     background: $color-blanco;
-    padding: $espaciado * 2;
+    padding: 2rem;
     border-radius: $radio;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
 
-    input, select {
-      padding: $espaciado * 0.8;
-      border: 1px solid #ccc;
-      border-radius: $radio * 0.5;
-      font-size: 1rem;
+  input, select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.9rem 1rem;
+    border: 1px solid #d8d8d8;
+    border-radius: $radio;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: $color-primario;
     }
   }
 
-  #guardar {
-    margin-top: $espaciado;
-    background-color: $color-acento;
+  button[type="submit"] {
+    width: 100%;
+    min-height: 50px;
+  }
 
-    &:hover {
-     background-color: color.adjust($color-acento, $lightness: -10%);
+  #guardar {
+    display: block;
+    margin: 1.5rem auto 0;
+  }
+
+  #lista-contactos {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+
+    li {
+      background: $color-blanco;
+      padding: 0.75rem 1rem;
+      border-radius: $radio;
+      margin-bottom: 0.5rem;
     }
   }
 }
@@ -259,4 +281,14 @@ p {
   background: linear-gradient(-45deg, $color-primario, $color-acento, #553d2a, #5f4633);
   background-size: 400% 400%;
  // animation: fondoMovimiento 12s ease infinite;
+}
+
+main {
+  width: 100%;
+}
+
+.recursos,
+.contacto {
+  width: min(1200px, 92%);
+  margin: 0 auto;
 }

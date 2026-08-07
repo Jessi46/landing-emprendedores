@@ -60,23 +60,14 @@ h1, h2, h3 {
 }
 
 .hero {
-  padding: 4rem 1rem;
-  text-align: center;
-  background: #FFFFFF;
-  border-bottom: 1px solid rgb(89.9797160243%, 78.9046653144%, 64.1379310345%);
-}
-.hero h1 {
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-}
-.hero p {
-  color: rgb(57.9310344828%, 40.0405679513%, 16.1866125761%);
-  margin-bottom: 2rem;
-}
-.hero .scroll {
-  margin-top: 2rem;
-  font-size: 1.5rem;
-  color: rgba(156, 101, 45, 0.8);
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #907761, rgba(156, 101, 45, 0.8), #553d2a, #5f4633);
+  background-size: 400% 400%;
+  color: white;
 }
 
 .btn, button[type=submit], #guardar {
@@ -116,32 +107,54 @@ h1, h2, h3 {
 }
 
 .contacto {
-  max-width: 600px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 3rem 1rem;
+  padding: 4rem 1rem;
+}
+.contacto h2 {
   text-align: center;
+  margin-bottom: 2rem;
 }
 .contacto form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
   background: #FFFFFF;
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
-.contacto form input, .contacto form select {
-  padding: 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.contacto input, .contacto select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.9rem 1rem;
+  border: 1px solid #d8d8d8;
+  border-radius: 8px;
   font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+.contacto input:focus, .contacto select:focus {
+  outline: none;
+  border-color: #907761;
+}
+.contacto button[type=submit] {
+  width: 100%;
+  min-height: 50px;
 }
 .contacto #guardar {
-  margin-top: 1rem;
-  background-color: rgba(156, 101, 45, 0.8);
+  display: block;
+  margin: 1.5rem auto 0;
 }
-.contacto #guardar:hover {
-  background-color: rgba(45.6540825285%, 29.5580918935%, 13.1694468832%, 0.8);
+.contacto #lista-contactos {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+.contacto #lista-contactos li {
+  background: #FFFFFF;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
 }
 
 .site-footer {
@@ -219,6 +232,16 @@ h1, h2, h3 {
 .hero {
   background: linear-gradient(-45deg, #907761, rgba(156, 101, 45, 0.8), #553d2a, #5f4633);
   background-size: 400% 400%;
+}
+
+main {
+  width: 100%;
+}
+
+.recursos,
+.contacto {
+  width: min(1200px, 92%);
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=main.css.map */
