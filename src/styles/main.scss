@@ -79,12 +79,23 @@ h1, h2, h3 {
 }
 
 // 4. Hero Section
+@keyframes fondoMovimiento {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 .hero {
+  width: 100%;
   min-height: 70vh;
+  padding: 4rem 1rem;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  text-align: center;
 
   background: linear-gradient(
     -45deg,
@@ -95,7 +106,22 @@ h1, h2, h3 {
   );
 
   background-size: 400% 400%;
-  color: white;
+  animation: fondoMovimiento 12s ease infinite;
+
+  h1 {
+    font-size: 2.8rem;
+    color: white;
+    animation: aparecer 0.8s ease-out;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .scroll {
+    margin-top: 2rem;
+    color: white;
+  }
 }
 
 // 5. Botones (.btn)
@@ -271,17 +297,6 @@ h1, h2, h3 {
   }
 }
 
-@keyframes fondoMovimiento {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.hero {
-  background: linear-gradient(-45deg, $color-primario, $color-acento, #553d2a, #5f4633);
-  background-size: 400% 400%;
- // animation: fondoMovimiento 12s ease infinite;
-}
 
 main {
   width: 100%;
