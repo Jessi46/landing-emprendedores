@@ -20,9 +20,9 @@ document.querySelectorAll(".oculto").forEach((el) => {
   observador.observe(el);
 });
 
-import { GestorContactos } from "./formulario";
+import { GestorFormulario } from "./formulario";
 
-const gestor = new GestorContactos("#formulario", "#error", "#lista-contactos");
+const gestor = new GestorFormulario("#formulario", "#error");
 
 const btnGuardar = document.querySelector("#guardar") as HTMLButtonElement;
 btnGuardar?.addEventListener("click", () => gestor.guardarJSON());
