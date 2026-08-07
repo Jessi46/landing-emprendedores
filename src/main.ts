@@ -1,5 +1,7 @@
+
 const boton = document.getElementById('menuBtn')!;
 const links = document.querySelector('.nav__links')!;
+
 
 boton.addEventListener('click', () => {
     // Muestra u oculta el menu en pantallas pequeñas 
@@ -26,3 +28,4 @@ const gestor = new GestorFormulario("#formulario", "#error");
 
 const btnGuardar = document.querySelector("#guardar") as HTMLButtonElement;
 btnGuardar?.addEventListener("click", () => gestor.guardarJSON());
+
